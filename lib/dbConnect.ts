@@ -2,9 +2,13 @@ import mongoose from 'mongoose';
 
 const uri = process.env.MONGODB_URI as string;
 
+let connection: any = null;
 const dbConnect = async () => {
   try {
-    const connection = await mongoose.connect(uri);
+    if (!connection) {
+      connection = await mongoose.connect(uri);
+      console.log('Mongo Reconnected');
+    }
     console.log('Mongo connected');
     return connection;
   } catch (error) {

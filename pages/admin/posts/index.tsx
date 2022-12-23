@@ -182,8 +182,7 @@ export const getServerSideProps: GetServerSideProps<
   try {
     const posts = await readPostsFromDb(limit, pageNumber);
 
-    if (!posts) return { notFound: true };
-    const formattedPosts = formatPosts(posts);
+    const formattedPosts = formatPosts(posts!);
     return {
       props: {
         posts: formattedPosts,
