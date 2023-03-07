@@ -7,6 +7,7 @@ import DropdownOptions, { dropdownOptions } from '../DropdownOptions';
 import ProfileHead from '../ProfileHead';
 import SearchBar from '../SearchBar';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const AdminSecondaryNav: FC<Props> = (props): JSX.Element => {

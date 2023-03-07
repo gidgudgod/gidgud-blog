@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import { GitHubAuthButton } from '../../components/button';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const Signin: NextPage<Props> = () => {

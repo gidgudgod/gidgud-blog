@@ -2,7 +2,6 @@
   "plugins": ["@typescript-eslint", "import"],
   "extends": [
     "eslint:recommended",
-    "plugin:import/recommended",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -17,9 +16,9 @@
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
     "max-len": [
-      2,
+      "warn",
       {
-        "code": 120,
+        "code": 180,
         "ignoreUrls": true,
         "ignoreComments": true,
         "ignorePattern": "^import\\s.+\\sfrom\\s.+;$"

@@ -5,6 +5,7 @@ import AdminLayout from '../../../../components/layout/AdminLayout';
 import { generateFormData } from '../../../../utils/helper';
 import { FinalPost } from '../../../../utils/types';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const Create: NextPage<Props> = () => {

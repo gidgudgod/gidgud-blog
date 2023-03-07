@@ -50,11 +50,14 @@ const EditLink: FC<Props> = ({ editor }): JSX.Element => {
           setShowEditForm(false);
         },
         duration: 100,
-        appendTo: 'parent'
+        appendTo: 'parent',
       }}
     >
       {!showEditForm && (
-        <div className="z-50 flex items-center space-x-6 rounded bg-primary-light p-3 text-primary-dark shadow-md shadow-secondary-dark dark:bg-primary-dark dark:text-primary-light">
+        <div
+          className="z-50 flex items-center space-x-6 rounded bg-primary-light p-3 text-primary-dark shadow-md shadow-secondary-dark
+         dark:bg-primary-dark dark:text-primary-light"
+        >
           <button onClick={handleOnLinkOpenClick}>
             <BsBoxArrowUpRight />
           </button>

@@ -46,7 +46,8 @@ const LinkForm: FC<Props> = ({
         <input
           autoFocus
           type="text"
-          className="rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark transition focus:border-primary-dark focus:ring-0 dark:text-primary-light dark:focus:border-primary-light"
+          className="rounded border-2 border-secondary-dark 
+          bg-transparent p-2 text-primary-dark transition focus:border-primary-dark focus:ring-0 dark:text-primary-light dark:focus:border-primary-light"
           placeholder="https://example.com"
           value={link.url}
           onChange={({ target }) => setLink({ ...link, url: target.value })}

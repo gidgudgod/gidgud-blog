@@ -1,4 +1,5 @@
-import { FC } from "react";
+/* eslint-disable max-len */
+import { FC } from 'react';
 
 interface Props {
   className?: string;

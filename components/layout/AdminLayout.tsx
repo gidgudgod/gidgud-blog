@@ -33,7 +33,9 @@ const AdminLayout: FC<Props> = ({ title, children }): JSX.Element => {
         {/* button create  */}
         <Link
           href="/admin/posts/create"
-          className="fixed right-10 bottom-10 z-10 rounded-full bg-secondary-dark p-3 text-primary-light shadow-sm transition hover:scale-90 dark:bg-secondary-light dark:text-primary-dark"
+          className="fixed right-10 bottom-10 z-10 rounded-full
+           bg-secondary-dark p-3 text-primary-light shadow-sm
+            transition hover:scale-90 dark:bg-secondary-light dark:text-primary-dark"
         >
           <AiFillFileAdd size={24} />
         </Link>

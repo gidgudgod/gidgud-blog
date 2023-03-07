@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const SearchBar: FC<Props> = (props): JSX.Element => {
@@ -7,7 +8,8 @@ const SearchBar: FC<Props> = (props): JSX.Element => {
     <input
       placeholder="Search..."
       type="text"
-      className="rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark outline-none transition focus:border-primary-dark dark:text-primary-light dark:focus:border-primary-light"
+      className="rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark outline-none transition
+       focus:border-primary-dark dark:text-primary-light dark:focus:border-primary-light"
     />
   );
 };

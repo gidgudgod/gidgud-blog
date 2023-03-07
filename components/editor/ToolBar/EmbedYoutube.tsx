@@ -37,7 +37,9 @@ const EmbedYoutube: FC<Props> = ({ onSubmit }): JSX.Element => {
             <input
               autoFocus
               type="text"
-              className="rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark transition focus:border-primary-dark focus:ring-0 dark:text-primary-light dark:focus:border-primary-light"
+              className="rounded border-2 border-secondary-dark 
+              bg-transparent p-2 text-primary-dark transition
+               focus:border-primary-dark focus:ring-0 dark:text-primary-light dark:focus:border-primary-light"
               placeholder="https://youtube.com"
               value={url}
               onChange={({ target }) => setUrl(target.value)}

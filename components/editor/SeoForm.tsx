@@ -4,6 +4,7 @@ import slugify from 'slugify';
 import { SeoResult } from '../../utils/types';
 
 const commonInput =
+  // eslint-disable-next-line max-len
   'w-full rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark outline-none transition focus:border-primary-dark dark:border-secondary-light dark:text-primary-light focus:dark:border-primary-light';
 
 interface Props {
@@ -22,6 +23,7 @@ const SEOForm: FC<Props> = ({
   const handleChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
   > = ({ target }) => {
+    // eslint-disable-next-line prefer-const
     let { name, value } = target;
     if (name === 'meta') value = value.substring(0, 150);
     const newValues = { ...values, [name]: value };

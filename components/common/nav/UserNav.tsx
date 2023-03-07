@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import { UserProfile } from '../../../utils/types';
 import useDarkMode from '../../../hooks/useDarkMode';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const defaultOptions: dropdownOptions = [

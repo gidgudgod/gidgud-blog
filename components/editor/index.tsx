@@ -168,7 +168,8 @@ const Editor: FC<Props> = ({
           <input
             type="text"
             placeholder="Title"
-            className="mb-3 w-full border-0 border-b-[1px] border-secondary-dark bg-transparent py-2 text-3xl font-semibold italic text-primary-dark outline-none dark:border-secondary-light dark:text-primary-light"
+            className="mb-3 w-full border-0 border-b-[1px] border-secondary-dark bg-transparent py-2 text-3xl font-semibold italic
+             text-primary-dark outline-none dark:border-secondary-light dark:text-primary-light"
             onChange={updateTitle}
             value={post.title}
           />
