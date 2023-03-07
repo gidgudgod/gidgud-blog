@@ -8,8 +8,9 @@ const dbConnect = async () => {
     if (!connection) {
       connection = await mongoose.connect(uri);
       console.log('Mongo Reconnected');
+    } else {
+      console.log('Mongo Connected');
     }
-    console.log('Mongo connected');
     return connection;
   } catch (error) {
     console.log('db connection fail: ', error);

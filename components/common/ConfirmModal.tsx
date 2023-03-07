@@ -24,7 +24,7 @@ const ConfirmModal: FC<Props> = ({
 }): JSX.Element => {
   return (
     <ModalContainer visible={visible} onClose={onClose}>
-      <div className="rounded bg-primary-dark p-3 dark:bg-primary-light">
+      <div className="max-w-[380px] rounded bg-primary-dark p-3 dark:bg-primary-light">
         {/* title */}
         <p className="text-lg font-semibold text-primary-light dark:text-primary-dark">
           {title}

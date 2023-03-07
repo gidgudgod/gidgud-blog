@@ -1,0 +1,20 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": [
+      "source.fixAll.eslint",
+      "source.formatModified",
+      "source.formatDocument"
+    ]
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": [
+      "source.fixAll.eslint",
+      "source.formatModified",
+      "source.formatDocument"
+    ]
+  }
+}

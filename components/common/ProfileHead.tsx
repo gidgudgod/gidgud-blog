@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { FC, useCallback } from 'react';
 import { AiFillCaretDown } from 'react-icons/ai';
+import ProfileIcon from './ProfileIcon';
 
 interface Props {
   lightOnly?: boolean;
@@ -9,25 +10,15 @@ interface Props {
   nameInitial?: string;
 }
 
-const commonClasses =
-  'relative flex items-center justify-center overflow-hidden rounded-full w-8 h-8 select-none';
-
 const ProfileHead: FC<Props> = ({
   nameInitial,
   avatar,
   lightOnly,
 }): JSX.Element => {
-  const getStyle = useCallback(() => {
-    if (lightOnly) return 'text-primary-dark bg-primary-light';
-
-    return 'bg-primary-dark dark:bg-primary-light dark:text-primary-dark text-primary-light';
-  }, [lightOnly]);
   return (
     <div className="flex items-center">
       {/* image / name initial */}
-      <div className={classNames(commonClasses, getStyle())}>
-        {avatar ? <Image src={avatar} fill alt="avatar" /> : nameInitial}
-      </div>
+      <ProfileIcon avatar={avatar} nameInitial={nameInitial} lightOnly />
       {/* down icon */}
       <AiFillCaretDown
         className={
