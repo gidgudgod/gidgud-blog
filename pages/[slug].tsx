@@ -4,20 +4,24 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from 'next';
-import DefaultLayout from '../components/layout/DefaultLayout';
-import dbConnect from '../lib/dbConnect';
-import Post from '../models/Post';
 import parse from 'html-react-parser';
 import Image from 'next/image';
 import dateFormat from 'dateformat';
+import DefaultLayout from '../components/layout/DefaultLayout';
+import dbConnect from '../lib/dbConnect';
+import Post from '../models/Post';
+import useAuth from '../hooks/useAuth';
+import Comments from '../components/common/Comments';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const SinglePost: NextPage<Props> = ({ post }) => {
-  const { title, content, meta, tags, slug, thumbnail, createdAt } = post;
+  const userProfile = useAuth();
+
+  const { id, title, content, meta, tags, slug, thumbnail, createdAt } = post;
   return (
     <DefaultLayout title={title} desc={meta}>
-      <div className="pb-20">
+      <div>
         {thumbnail ? (
           <div className="relative aspect-video">
             <Image
@@ -36,7 +40,10 @@ const SinglePost: NextPage<Props> = ({ post }) => {
         <div className="flex items-center justify-between py-2 text-secondary-dark dark:text-secondary-light">
           <div>
             {tags.map((t, index) => (
-              <span key={t + index}>#{t}&nbsp;</span>
+              <span key={t + index}>
+                #{t}
+                &nbsp;
+              </span>
             ))}
           </div>
           <span>{dateFormat(createdAt, 'd-mmm-yyyy')}</span>
@@ -44,6 +51,9 @@ const SinglePost: NextPage<Props> = ({ post }) => {
         <div className="prose prose-lg mx-auto max-w-full dark:prose-invert">
           {parse(content)}
         </div>
+
+        {/* comment form */}
+        <Comments belongsTo={id} />
       </div>
     </DefaultLayout>
   );
