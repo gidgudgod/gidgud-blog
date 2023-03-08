@@ -72,10 +72,10 @@ const Editor: FC<Props> = ({
         },
       }),
       Youtube.configure({
-        width: 840,
-        height: 472.5,
+        // width: 840,
+        // height: 472.5,
         HTMLAttributes: {
-          class: 'mx-auto rounded',
+          class: 'w-full aspect-video',
         },
       }),
       TipTapImage.configure({

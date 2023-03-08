@@ -18,6 +18,7 @@ interface Props {
   onReplySubmit?: (content: string) => void;
   onDeleteClick?: () => void;
   onLikeClick?: () => void;
+  busy?: boolean;
 }
 
 const CommentCard: FC<Props> = ({
@@ -27,6 +28,7 @@ const CommentCard: FC<Props> = ({
   onReplySubmit,
   onDeleteClick,
   onLikeClick,
+  busy,
 }): JSX.Element => {
   const { owner, createdAt, content, likedByOwner, likes } = comment;
   const { name, avatar } = owner;
@@ -76,6 +78,7 @@ const CommentCard: FC<Props> = ({
             liked={likedByOwner}
             label={likes + ' likes'}
             onClick={onLikeClick}
+            busy={busy}
           />
           <Button onClick={handleOnReplyClick}>
             <BsFillReplyAllFill />

@@ -9,6 +9,7 @@ interface Props {
   busy?: boolean;
   onClose?(): void;
   initialState?: string;
+  visible?: boolean;
 }
 
 const CommentForm: FC<Props> = ({
@@ -17,7 +18,8 @@ const CommentForm: FC<Props> = ({
   initialState,
   busy = false,
   onClose,
-}): JSX.Element => {
+  visible = true,
+}): JSX.Element | null => {
   const { editor } = useEditorConfig({ placeholder: 'Add your comment ...' });
 
   const handleSubmit = () => {
@@ -34,6 +36,8 @@ const CommentForm: FC<Props> = ({
       editor?.chain().focus().setContent(initialState).run();
   }, [editor, initialState]);
 
+  if (!visible) return null;
+
   return (
     <div>
       {title ? (
@@ -46,7 +50,7 @@ const CommentForm: FC<Props> = ({
         editor={editor}
       />
 
-      <div className="flex justify-end py-3">
+      <div className="justify-end py-3 md:flex">
         <div className="flex space-x-4">
           <ActionButton busy={busy} title="Submit" onClick={handleSubmit} />
 
