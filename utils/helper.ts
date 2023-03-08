@@ -2,7 +2,7 @@ import { FinalPost, PostDetail } from './types';
 
 export const generateFormData = (post: FinalPost) => {
   const formData = new FormData();
-  for (let key in post) {
+  for (const key in post) {
     const value = (post as any)[key];
     if (key === 'tags' && value.trim()) {
       const tags = value.split(',').map((tag: string) => tag.trim());
@@ -15,4 +15,9 @@ export const generateFormData = (post: FinalPost) => {
 
 export const filterPosts = (posts: PostDetail[], postToFilter: PostDetail) => {
   return posts.filter((post) => post.id !== postToFilter.id);
+};
+
+export const trimText = (text: string, trimBy: number) => {
+  if (text.length <= trimBy) return text;
+  return text.substring(0, trimBy).trim() + '...';
 };

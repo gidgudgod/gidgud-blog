@@ -45,3 +45,26 @@ export interface CommentResponse {
     avatar?: string;
   };
 }
+
+export interface LatestComment {
+  id: string;
+  owner: {
+    id: string;
+    name: string;
+    avatar?: string;
+  };
+  content: string;
+  belongsTo: {
+    id: string;
+    title: string;
+    slug: string;
+  };
+}
+
+export interface LatestUserProfile {
+  id: string;
+  name: string;
+  avatar?: string;
+  provider: string;
+  email: string;
+}

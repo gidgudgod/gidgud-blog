@@ -48,9 +48,12 @@ const UserNav: FC<Props> = (props): JSX.Element => {
   return (
     <div className="flex items-center justify-between bg-primary-dark p-3">
       {/* logo */}
-      <Link href="/" className="flex space-x-2 text-highlight-dark">
-        <Logo className="fill-highlight-dark" />
-        <span className="text-xl font-semibold">{APP_NAME}</span>
+      <Link
+        href="/"
+        className="flex items-center space-x-2 text-highlight-dark"
+      >
+        <Logo className="h-5 w-5 fill-highlight-dark md:h-8 md:w-8" />
+        <span className="font-semibold md:text-xl">{APP_NAME}</span>
       </Link>
 
       <div className="flex items-center space-x-5">
@@ -66,9 +69,9 @@ const UserNav: FC<Props> = (props): JSX.Element => {
             options={dropDownOptions}
             head={
               <ProfileHead
-                nameInitial="G"
+                nameInitial={profile?.name[0].toUpperCase()}
                 lightOnly
-                avatar={session?.user?.image as string}
+                avatar={profile?.avatar}
               />
             }
           />
