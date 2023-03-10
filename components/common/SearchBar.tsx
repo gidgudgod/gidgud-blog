@@ -1,16 +1,29 @@
-import { FC } from 'react';
+import { FC, FormEventHandler, useState } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Props {}
+interface Props {
+  onSubmit(query: string): void;
+}
 
-const SearchBar: FC<Props> = (props): JSX.Element => {
+const SearchBar: FC<Props> = ({ onSubmit }): JSX.Element => {
+  const [query, setQuery] = useState('');
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+
+    onSubmit(query);
+  };
+
   return (
-    <input
-      placeholder="Search..."
-      type="text"
-      className="rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark outline-none transition
-       focus:border-primary-dark dark:text-primary-light dark:focus:border-primary-light"
-    />
+    <form onSubmit={handleSubmit}>
+      <input
+        placeholder="Search..."
+        type="text"
+        className="rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark outline-none transition
+         focus:border-primary-dark dark:text-primary-light dark:focus:border-primary-light"
+        value={query}
+        onChange={({ target }) => setQuery(target.value)}
+      />
+    </form>
   );
 };
 
